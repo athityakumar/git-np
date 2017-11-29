@@ -29,7 +29,7 @@ class GitNP
 
   def read_yaml(file_path)
     if File.exist?(file_path)
-      YAML.safe_load(File.open(file_name))
+      YAML.safe_load(File.open(file_path))
     else
       {}
     end
