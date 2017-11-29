@@ -7,14 +7,16 @@ class GitNP
       Dir.mkdir(project_name)
     end
 
-    # TODO : Read from licenses.json for license_wording
-    #   while creating LICENSE.md file
-
-    # Create markdown files
+    # Create markdown files from template
     @opts['file_templates'].each do |generated_file_name, template_content|
       File.open("#{project_name}/#{generated_file_name}", 'w') do |file|
         file.write(template_content.result(binding))
       end
     end
+
+    # TODO : Read from licenses.json for license_wording
+    #   while creating LICENSE.md file.
+
+    # TODO : Apply Git add, Git commit and cd to the new project.
   end
 end
