@@ -13,8 +13,8 @@ class GitNP
   private
 
   def parse_opts(env_file_name)
-    user_opts     = read_yaml(fetch_absolute_path(env_file_name), type: :user)
-    default_opts  = read_yaml(fetch_absolute_path(env_file_name), type: :default)
+    user_opts     = read_yaml(fetch_absolute_path(env_file_name, type: :user))
+    default_opts  = read_yaml(fetch_absolute_path(env_file_name, type: :default))
 
     @opts = default_opts.merge(user_opts)
   end
@@ -23,7 +23,7 @@ class GitNP
     if type == :default
       File.join(File.dirname(__FILE__), '../', relative_path)
     else
-      File.join(Dir.home, env_file_name, '.config/git-np', relative_path)
+      File.join(Dir.home, '.config/git-np', relative_path)
     end
   end
 
