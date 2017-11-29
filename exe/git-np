@@ -1,0 +1,9 @@
+#!/usr/bin/env ruby
+
+require 'git_np'
+
+instance     = GitNP.new
+project_name = ARGV.join(' ')
+
+instance.setup(project_name)
+true
