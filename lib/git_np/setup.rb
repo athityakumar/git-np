@@ -18,7 +18,7 @@ class GitNP
         File.open("#{project_name}/#{generated_file_name}", 'w') do |file|
           file.write(template_content.result(binding))
         end
-        sucess "Finished generating #{generated_file_name} file..."
+        success "Finished generating #{generated_file_name} file..."
       rescue Exception => e
         failure "Error in generating #{generated_file_name} file : #{e}"
       end

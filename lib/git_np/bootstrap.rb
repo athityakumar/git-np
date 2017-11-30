@@ -16,11 +16,12 @@ class GitNP
   private
 
   def parse_opts(env_file_name)
-    user_opts     = read_yaml(fetch_absolute_path(env_file_name, type: :user))
-    default_opts  = read_yaml(fetch_absolute_path(env_file_name, type: :default))
-    default_opts['file_templates'].merge!(user_opts['file_templates'])
+    user_opts      = read_yaml(fetch_absolute_path(env_file_name, type: :user))
+    default_opts   = read_yaml(fetch_absolute_path(env_file_name, type: :default))
+    file_templates = default_opts['file_templates'].merge(user_opts['file_templates'] || {})
 
-    @opts = default_opts.merge(user_opts)
+    @opts           = default_opts.merge(user_opts).merge({'file_templates' => file_templates})
+    @opts['year'] ||= Date.today.year.to_s
   end
 
   def fetch_absolute_path(relative_path, type: :default)

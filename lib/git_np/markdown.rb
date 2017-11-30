@@ -2,13 +2,18 @@ class GitNP
   def read_markdown_templates
     @opts['file_templates'].map do |generated_file_name, template_file_name|
       begin
-        template_content = read_markdown_template(template_file_name)
-        success "Finished reading #{generated_file_name} template..."
+        if template_file_name
+          template_content = read_markdown_template(template_file_name)
+          success "Finished reading #{generated_file_name} template..."
 
-        [
-          generated_file_name,
-          template_content
-        ]
+          [
+            generated_file_name,
+            template_content
+          ]
+        else
+          debug "Skipping #{generated_file_name}..."
+          next
+        end
       rescue Exception => e
         failure "Error in reading #{generated_file_name} template : #{e}"
         next
