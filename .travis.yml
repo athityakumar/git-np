@@ -10,6 +10,7 @@ rvm:
 script:
   - bundle exec rubocop
   - bundle exec rspec
+  - bundle exec ruumba -D -e lib/templates -c .ruumba.yml
 
 install:
   - gem install bundler

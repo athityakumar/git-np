@@ -10,4 +10,9 @@ RuboCop::RakeTask.new do |task|
   task.requires << 'rubocop-rspec'
 end
 
+require 'ruumba/rake_task'
+Ruumba::RakeTask.new do |task|
+  task.dir = %w[lib/templates]
+end
+
 task default: %w[spec rubocop ruumba]

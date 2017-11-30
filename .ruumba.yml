@@ -5,3 +5,6 @@ AllCops:
     - 'lib/templates/*.erb'
   Exclude:
     - '**/*.rb'
+
+Layout/TrailingBlankLines:
+  Enabled: false
