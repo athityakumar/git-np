@@ -1,3 +1,9 @@
+show_debug_messages: true
+
+name: 'Athitya Kumar'
+email_id: 'athityakumar@gmail.com'
+github_username: 'athityakumar'
+
 file_templates:
   'README.md': 'README.md.erb'
   'LICENSE.md': 'LICENSE.md.erb'
@@ -5,15 +11,12 @@ file_templates:
   'ISSUES_TEMPLATE.md': 'ISSUES_TEMPLATE.md.erb'
   'RELEASE_POLICY.md': 'RELEASE_POLICY.md.erb'
 
-custom:
-  license: 'MIT License'
-  license_year: '2017' #! If not set, uses default year
+# custom:
+#   license: 'MIT License'
+#   license_year: '2017' #! If not set, uses default year
 
-use_custom:
-  license: true
-  license_year: true
+# use_custom:
+#   license: true
+#   license_year: true
 
-special_structure: false #! Add support for Ruby gem, Pip library, etc.
-
-name: '{name}'
-github_username: '{username}'
+# special_structure: false #! Add support for Ruby gem, Pip library, etc.

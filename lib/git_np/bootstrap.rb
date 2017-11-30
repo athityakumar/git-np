@@ -2,12 +2,15 @@ class GitNP
   def bootstrap
     # Read from yaml file
     # Store parsed opts
-    parse_opts('config.yaml')
+    begin
+      parse_opts('config.yaml')
+      success 'Finished reading configuration...'
+    rescue Exception => e
+      failure "Error in reading configuration : #{e}"
+    end
 
     # Read markdown template files
     @opts['file_templates'] = read_markdown_templates
-
-    # Set options from CLI - choose License, when not using custom values etc.
   end
 
   private
@@ -15,6 +18,7 @@ class GitNP
   def parse_opts(env_file_name)
     user_opts     = read_yaml(fetch_absolute_path(env_file_name, type: :user))
     default_opts  = read_yaml(fetch_absolute_path(env_file_name, type: :default))
+    default_opts['file_templates'].merge!(user_opts['file_templates'])
 
     @opts = default_opts.merge(user_opts)
   end
