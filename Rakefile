@@ -10,4 +10,4 @@ RuboCop::RakeTask.new do |task|
   task.requires << 'rubocop-rspec'
 end
 
-task default: %w[spec rubocop]
+task default: %w[spec rubocop ruumba]

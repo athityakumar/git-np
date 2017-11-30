@@ -2,7 +2,7 @@ class GitNP
   def read_markdown_templates
     @opts['file_templates'].map do |generated_file_name, template_file_name|
       template_content = read_markdown_template(template_file_name)
-      
+
       [
         generated_file_name,
         template_content

@@ -5,8 +5,8 @@ AllCops:
     - 'vendor/**/*'
     - 'benchmarks/*'
     - 'profile/*'
-    - 'lib/yaml/*'
-    - 'lib/**/*.sh'
+    - 'lib/templates/*'
+    - 'lib/*.yaml'
   DisplayCopNames: true
   TargetRubyVersion: 2.1
 
