@@ -7,7 +7,8 @@ Gem::Specification.new do |spec|
   spec.version       = GitNP::VERSION
   spec.authors       = ['Athitya Kumar']
   spec.email         = ['athityakumar@gmail.com']
-  spec.summary       = "A Ruby CLI gem that makes it easier to start new Git projects, by facilitating easy generation of required markdown files."
+  spec.summary       = 'A Ruby CLI gem that makes it easier to start new Git projects, '\
+                       'by facilitating easy generation of required markdown files.'
   spec.homepage      = 'https://github.com/athityakumar/colorls'
   spec.license       = 'MIT'
 

@@ -1,11 +1,8 @@
 class GitNP
   def setup(project_name)
     # Create directory
-    if Dir.exist?(project_name)
-      raise 'Sorry, a directory with same name already exists here'
-    else
-      Dir.mkdir(project_name)
-    end
+    raise 'Sorry, a directory with same name already exists here' if Dir.exist?(project_name)
+    Dir.mkdir(project_name)
 
     # Create markdown files from template
     @opts['file_templates'].each do |generated_file_name, template_content|
